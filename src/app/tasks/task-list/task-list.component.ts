@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TasksServices } from '../services/tasks.services';
 
 @Component({
   selector: 'app-task-list',
@@ -6,5 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./task-list.component.scss']
 })
 export class TaskListComponent {
-  tasks: Array<String> = ["sweep the living room", "mop the floor", "cook dinner", "Read book"]
+
+  constructor(private tasksServices: TasksServices) { }
+
+  get tasks() {
+    return this.tasksServices.tasks;
+  }
+
+  delete() {
+    this.tasksServices.deleteTask();
+  }
+
 }
