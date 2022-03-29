@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TasksServices } from '../services/tasks.services';
+import { Task } from '../interfaces/tasks';
 
 @Component({
   selector: 'app-task-list',
@@ -14,8 +15,8 @@ export class TaskListComponent {
     return this.tasksServices.tasks;
   }
 
-  delete() {
-    this.tasksServices.deleteTask();
+  delete(task: Task) {
+    this.tasksServices.deleteTask(task.task);
   }
 
 }
