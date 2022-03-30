@@ -1,1 +1,7 @@
 <h2 class="subtitle">List Tasks</h2>
+<div class="notification is-link" *ngIf="countTasks > 0">
+    Number of tasks: {{countTasks}}
+</div>
+<div class="notification is-danger" *ngIf="countTasks == 0">
+    THERE ARE NOT TASKS IN THE LIST
+</div>

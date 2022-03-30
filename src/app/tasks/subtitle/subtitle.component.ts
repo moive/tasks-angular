@@ -1,16 +1,17 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { TasksServices } from '../services/tasks.services';
 
 @Component({
   selector: 'app-subtitle',
   templateUrl: './subtitle.component.html',
   styleUrls: ['./subtitle.component.scss'],
-  encapsulation: ViewEncapsulation.None,
 })
-export class SubtitleComponent implements OnInit {
+export class SubtitleComponent {
 
-  constructor() { }
+  constructor(private tasksServices: TasksServices) { }
 
-  ngOnInit(): void {
+  get countTasks() {
+    return this.tasksServices.tasks.length;
   }
 
 }

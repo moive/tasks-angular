@@ -15,8 +15,12 @@ export class TaskListComponent {
     return this.tasksServices.tasks;
   }
 
-  delete(task: Task) {
-    this.tasksServices.deleteTask(task.task);
+  delete(t: Task) {
+    this.tasksServices.deleteTask(t.task);
+  }
+
+  complete(t: Task) {
+    this.tasksServices.completeTask(t.task)
   }
 
 }
